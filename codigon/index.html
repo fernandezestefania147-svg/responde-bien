@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>😏 Responde bien</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+        background-color: #ffe6f0;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    #buttons {
+        margin-top: 40px;
+        position: relative;
+        height: 300px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 15px 30px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+    }
+
+    #yes {
+        background-color: #ff4d88;
+        color: white;
+        transition: transform 0.3s;
+    }
+
+    #no {
+        background-color: #ccc;
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+
+<h1>Nataly, ¿me prestas tus cremas? 💄</h1>
+
+<div id="buttons">
+    <button id="yes" onclick="aceptar()">Sí</button>
+    <button id="no" onclick="rechazar()">No</button>
+</div>
+
+<script>
+let escala = 1;
+
+function rechazar() {
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+
+    // mover botón NO
+    const x = Math.random() * 200;
+    const y = Math.random() * 200;
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    // agrandar botón SÍ
+    escala += 0.3;
+    yesBtn.style.transform = `scale(${escala})`;
+}
+
+function aceptar() {
+    document.body.innerHTML = "<h1>😎 Sabía que dirías que SÍ 💖</h1>";
+}
+</script>
+
+</body>
+</html>
